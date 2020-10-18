@@ -1,0 +1,259 @@
+#wrapper{
+	&.signup,
+	&.login{
+		padding: 0;
+	}
+}
+
+
+.signup,
+.login{
+
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background: #fff;
+
+
+
+	.flex-row{
+		padding: 50px 0;
+		@include flex-align;
+		min-height: 100vh;
+		flex-basis: auto;
+
+		@include media ("<tablet"){
+			display: block;
+			padding: 0 0 15px;
+		}
+	}
+
+	.container{
+		@include media ("<tablet"){
+			padding: 0;
+		}
+	}
+
+	.col1{
+		@include flex-align;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		min-height: calc(100vh - 100px);
+		flex: 0 0 40%;
+		max-width: 40%;
+		padding: 0;
+		position: relative;
+
+		@include media ("<tablet"){
+			min-height: auto;
+			height: auto;
+			max-width: 100%;
+			width: 100%;
+			text-align: center;
+		}
+
+		&:after{
+			@include ease;
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background:  rgba(0, 0, 0, 0.7);
+		}
+	}
+	.col2{
+		@include flex-align;
+		flex: 0 0 60%;
+		max-width: 60%;
+		padding: 0;
+		box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+		min-height: calc(100vh - 200px);
+		border-radius: 0 50px 50px 0;
+
+		@include media ("<tablet"){
+			min-height: auto;
+			height: auto;
+			max-width: 100%;
+			width: 100%;
+			box-shadow: none;
+		}
+	}
+
+	.login-text{
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		color: #fff;
+		font-size: 24px;
+		padding: 30px;
+		line-height: 37px;
+		font-weight: 300;
+
+		@include media ("<tablet"){
+			padding: 20px 20px 0;
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+	.logo{
+		float: none;
+		margin: 0 auto 30px;
+		width: 100px;
+		border-radius: 50%;
+		overflow: hidden;
+		background: #fff;
+		padding: 10px;
+
+		@include media ("<tablet"){
+			margin: 0 auto 20px;
+		}
+
+		a{
+			width: 100% !important;
+		}
+	}
+
+	h1{
+		padding: 0 0 0 30px;
+		margin: 0 0 50px;
+	}
+
+
+	.form{
+		position: relative;
+		width: 100%;
+		padding: 50px;
+		background: #fff;
+		color: #222;
+
+		
+
+		@include media ("<tablet"){
+			padding: 20px 15px;
+		}
+
+		.form-group{
+			position: relative;
+
+			.input-error{
+				position: absolute;
+				top: 1px;
+				right: 4px;
+			}
+
+
+			label{
+				display: block;
+				margin: 0;
+				text-transform: uppercase;
+				font-size: 11px;
+				line-height: 14px;
+				position: absolute;
+				top: 10px;
+				left: 33px;
+			}
+		}
+
+		.form-control{
+			background-color: none;
+			color: #222;
+			padding: 30px 15px 5px 30px;
+			border: 1px solid #f1f1f1;
+			border-left: 3px solid #2d8fbd;
+			line-height: 30px;
+			height: 70px;
+
+			&:focus{
+				border: 1px solid rgba(0,0,0,0.4);
+				border-left: 3px solid #2d8fbd;
+			}
+
+			@include placeholder{
+				color: rgba(0, 0, 0, 0.3);
+			}
+		}
+
+
+		.custom-select{
+			background-position: calc(100% - 9px) 43px;
+		}
+
+		.custom-control-label{
+			color: #222;
+			text-transform: capitalize !important;
+			font-size: 13px !important;
+			line-height: 25px !important;
+			position: relative !important;
+			top: 0 !important;
+			left: 0 !important;
+		}
+
+		.jcf-select {
+			background: none;
+			border:1px solid rgba(0, 0, 0, 0.1);
+
+			.jcf-select-text {
+				color: #fff;
+			}
+
+			.jcf-select-opener {
+				&:after{
+					border-color: #222 transparent transparent transparent;
+				}
+			}
+		}
+	}
+
+	.divider{
+		margin: 30px 0;
+		position: relative;
+		font-size: 18px;
+		line-height: 22px;
+		text-align: center;
+		overflow: hidden;
+
+		span{
+			display: inline-block;
+			vertical-align: top;
+			padding: 5px 10px;
+			position: relative;
+			z-index: 1;
+			color: rgba(0, 0, 0, 0.5);
+			font-weight: 400;
+			font-size: 12px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			
+			&:before,
+			&:after{
+				@include ease;
+				position: absolute;
+				content: '';
+				top: 50%;
+				margin: -1px 0 0;
+				height: 1px;
+				width: 999px;
+				background:  rgba(0, 0, 0, 0.2);
+			}
+
+			&:after{
+				left: 110%;
+			}
+
+			&:before{
+				right: 110%;
+			}
+		}
+
+		
+	}
+
+	.social-links{
+		text-align: center;
+	}
+}
